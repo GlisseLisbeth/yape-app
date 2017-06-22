@@ -6,7 +6,7 @@ const SendCard = (update) => {
   const col = $('<div class="col s12"></div>');
   const img = $('<img src="img/icons/bcp-logo.png" alt="phone" class="big-icon margin-auto">');
   const title = $('<h6 class="center-align font-500">Ingresa la clave de tu tarjeta</h6>');
-  const p = $('<p class="center-align">tarjeta <strong>'+ userData.phone +'</strong> </p>');
+  const p = $('<p class="center-align">tarjeta <strong> ****'+ lastDigits(userData.cardNum) +'</strong> </p>');
   const form = $('<form onsubmit="return false" class="form relative margin-top"></form>');
   const icon = $('<img src="img/icons/lock.png" class="field-icon">');
   const inputPass = $('<input type="password" class="center-align" placeholder="- - - - -" maxLength="4" >');
