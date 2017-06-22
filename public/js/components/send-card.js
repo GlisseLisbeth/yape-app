@@ -15,13 +15,24 @@ const SendCard = (update) => {
   btnRegistrar.prop('disabled', true);
 
   const validateFields = () => {
-    if( inputPass.val().length == 4 ) {
+    if( /^\d{4}$/.test(inputPass.val())) {
       btnRegistrar.prop('disabled', false);
       btnRegistrar.focus();
     } else {
       btnRegistrar.prop('disabled', true);
     }
   }
+
+  inputPass.on('keypress', (event) => {
+    const charCode = event.keyCode;
+    if (charCode != 8) {
+        if ((charCode < 48 || charCode > 57) && charCode!= 46) {
+          return false;
+        }
+    } else {
+      return true;
+    }
+  })
 
   inputPass.on('keyup', (e) => {
     validateFields();
